@@ -15,7 +15,7 @@ contract GFTToken is ERC20, Ownable {
         _mint(account, amount);
     }
 
-    function burn(address account, uint256 amount) public onlyOwner {
-        _burn(account, amount);
+    function burn(uint256 amount) public {
+        _burn(msg.sender, amount);
     }
 }
