@@ -12,6 +12,7 @@ contract GFTToken is ERC20, Ownable {
     ) payable ERC20(name, symbol) {}
 
     function mint(address account, uint256 amount) public onlyOwner {
+        require(totalSupply() + amount <= 1100000000 * 10 ** decimals());
         _mint(account, amount);
     }
 
